@@ -28,7 +28,7 @@
     {{- end -}}
 
     {{- with $profile.subtitle -}}
-        <h2 class="home-subtitle">
+        <h2 class="drac-text-cyan home-subtitle">
             {{- if $profile.typeit -}}
                 {{- $id := dict "Content" . "Scratch" $.Scratch | partial "function/id.html" -}}
                 <div id="{{ $id }}" class="typeit"></div>
