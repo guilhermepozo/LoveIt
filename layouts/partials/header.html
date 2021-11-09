@@ -1,24 +1,24 @@
 {{- /* Desktop header */ -}}
 <header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
+    <div class="header-wrapper drac-bg-animated">
         <div class="header-title">
-            <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}">
+            <a href="{{ .Site.Home.RelPermalink }}" class="drac-text-black" title="{{ .Site.Title }}">
                 {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
                         {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
                     {{- end -}}
                     {{- with .pre -}}
-                        <span class="header-title-pre">{{ . | safeHTML }}</span>
+                        <span class="header-title-pre drac-text-black">{{ . | safeHTML }}</span>
                     {{- end -}}
                     {{- if .typeit -}}
                         {{- $id := dict "Content" .name "Scratch" $.Scratch | partial "function/id.html" -}}
-                        <span id="{{ $id }}" class="typeit"></span>
+                        <span id="{{ $id }}" class="typeit drac-text-black drac-text-white-secondary--hover"></span>
                         {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
                     {{- else -}}
                         {{- .name -}}
                     {{- end -}}
                     {{- with .post -}}
-                        <span class="header-title-post">{{ . | safeHTML }}</span>
+                        <span class="header-title-post drac-text-black">{{ . | safeHTML }}</span>
                     {{- end -}}
                 {{- else -}}
                     {{- .Site.Title -}}
@@ -32,15 +32,15 @@
                     {{- with .Page -}}
                         {{- $url = .RelPermalink -}}
                     {{- end -}}
-                    <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                    <a class="drac-text-black drac-text-white-secondary--hover menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
                         {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
                     </a>
                 {{- end -}}
-                {{- if .Site.Menus.main -}}
+                <!-- {{- if .Site.Menus.main -}}
                     <span class="menu-item delimiter"></span>
-                {{- end -}}
-                {{- if .Site.IsMultiLingual -}}
-                    <a href="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
+                {{- end -}} -->
+                <!-- {{- if .Site.IsMultiLingual -}}
+                    <a href="javascript:void(0);" class="menu-item language drac-text-black" title="{{ T "selectLanguage" }}">
                         {{- .Language.LanguageName -}}
                         <i class="fas fa-chevron-right fa-fw"></i>
                         <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
@@ -61,9 +61,9 @@
                             {{- end -}}
                         </select>
                     </a>
-                {{- end -}}
+                {{- end -}} -->
                 {{- if .Site.Params.search.enable -}}
-                    <span class="menu-item search" id="search-desktop">
+                    <span class="drac-text-black menu-item search" id="search-desktop">
                         <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="{{ T `search` }}">
                             <i class="fas fa-search fa-fw"></i>
@@ -76,9 +76,7 @@
                         </span>
                     </span>
                 {{- end -}}
-                <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
+                <a class="menu-item theme-switch"></a>
             </div>
         </div>
     </div>
@@ -86,7 +84,7 @@
 
 {{- /* Mobile header */ -}}
 <header class="mobile" id="header-mobile">
-    <div class="header-container">
+    <div class="header-container ">
         <div class="header-wrapper">
             <div class="header-title">
                 <a href="{{ .Site.Home.RelPermalink }}" title="{{ .Site.Title }}">
@@ -118,7 +116,7 @@
         </div>
         <div class="menu" id="menu-mobile">
             {{- if .Site.Params.search.enable -}}
-                <div class="search-wrapper">
+                <div class="search-wrapper drac-bg-black">
                     <div class="search mobile" id="search-mobile">
                         <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-mobile">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="{{ T `search` }}">
