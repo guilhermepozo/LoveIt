@@ -12,17 +12,11 @@
         <title>
             {{- block "title" . }}{{ .Site.Title }}{{ end -}}
         </title>
-        <style>
-            /* body {
-                font-family: 'Fire Coda', monospace;
-                font-size: 18px;
-            } */
-        </style>
         {{- partial "head/meta.html" . -}}
         {{- partial "head/link.html" . -}}
         {{- partial "head/seo.html" . -}}
     </head>
-    <body header-desktop="{{ .Site.Params.header.desktopMode }}"  class="drac-bg-black drac-scrollbar-pink" header-mobile="{{ .Site.Params.header.mobileMode }}">
+    <body header-desktop="{{ .Site.Params.header.desktopMode }}"  theme="dark" class="drac-bg-black drac-scrollbar-pink" header-mobile="{{ .Site.Params.header.mobileMode }}">
         {{- /* Check theme isDark before body rendering */ -}}
         {{- $theme := .Site.Params.defaulttheme -}}
         <div id="mask"></div>

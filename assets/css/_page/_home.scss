@@ -145,7 +145,7 @@
         font-size: 1.125rem;
       }
 
-      @include link(false, true);
+      @include link(false, false);
 
       // b, strong {
       //   color: $global-font-secondary-color;

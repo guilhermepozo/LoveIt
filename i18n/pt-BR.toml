@@ -106,10 +106,10 @@ other = "Compartilhe em"
 other = "Conteúdos"
 
 [publishedOnDate]
-other = "publicado em {{ .Date }}"
+other = "publicou no dia {{ .Date }}"
 
 [includedInCategories]
-other = "incluido em {{ .Categories }}"
+other = "em {{ .Categories }}"
 
 [wordCount]
 one = "Uma palavra"

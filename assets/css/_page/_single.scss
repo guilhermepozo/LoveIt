@@ -4,14 +4,14 @@
   .single-title {
     margin: 1rem 0 .5rem;
     font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 100%;
+    font-weight: bold;
+    line-height: 140%;
   }
 
   .single-subtitle {
     margin: .4rem 0;
     font-size: 1.2rem;
-    font-weight: 300;
+    font-weight: normal;
     font-style: italic;
     line-height: 100%;
   }
@@ -24,11 +24,11 @@
       display: inline-block;
     }
 
-    [theme=dark] & {
-      color: $global-font-secondary-color-dark;
-    }
+    // [theme=dark] & {
+    //   color: $global-font-secondary-color-dark;
+    // }
 
-    @include link(false, true);
+    @include link(false, false);
 
     .author {
       font-size: 1.05rem;
@@ -131,17 +131,21 @@
 
     @include link(false, false);
 
-    a {
+    a, a::before, a::after  {
       @include overflow-wrap(break-word);
-
-      [theme=dark] & b, [theme=dark] & strong {
-        color: $single-link-color-dark;
-      }
+      color: $single-link-color-dark;
+      // [theme=dark] & b, [theme=dark] & strong {
+      //   color: $single-link-color-dark;
+      // }
     }
+    a:active,
+    a:hover {
+      color: $single-link-color-dark;
 
-    [theme=dark] a:hover b, [theme=dark] a:hover strong {
-      color: $single-link-hover-color-dark;
     }
+    // [theme=dark] a:hover b, [theme=dark] a:hover strong {
+    //   color: $single-link-hover-color-dark;
+    // }
 
     ul, ol {
       margin: .5rem 0;
