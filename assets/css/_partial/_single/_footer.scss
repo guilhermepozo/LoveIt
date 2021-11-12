@@ -1,5 +1,6 @@
 .post-footer {
   margin-top: 3rem;
+  color: #414558;
 
   .post-info {
     border-bottom: 1px solid $global-border-color;
@@ -15,22 +16,12 @@
 
       .post-info-mod {
         font-size: 0.8em;
-        color: $global-font-secondary-color;
-
-        [theme=dark] & {
-          color: $global-font-secondary-color-dark;
-        }
 
         @include link(false, false);
       }
 
       .post-info-license {
         font-size: 0.8em;
-        color: $global-font-secondary-color;
-
-        [theme=dark] & {
-          color: $global-font-secondary-color-dark;
-        }
 
         @include link(false, false);
       }
@@ -58,6 +49,8 @@
   }
 
   .post-tags {
+
+
     max-width: 65%;
 
     * {
@@ -74,6 +67,7 @@
 
     & a.prev,
     & a.next {
+      color: #F8F8F2;
       font-size: 1rem;
       font-weight: 600;
       @include transition(all 0.3s ease-out);
@@ -81,6 +75,7 @@
 
     & a.prev {
       float: left;
+      color: #F8F8F2;
     }
 
     & a.prev:hover {

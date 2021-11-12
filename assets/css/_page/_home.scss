@@ -79,11 +79,6 @@
   .summary {
     padding-top: 1rem;
     padding-bottom: .8rem;
-    // color: $global-font-color;
-
-    // [theme=dark] & {
-    //   color: $global-font-color-dark;
-    // }
 
     .featured-image-preview {
       width: 100%;
@@ -124,7 +119,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       @include overflow-wrap(break-word);
-
+      font-weight: 300;
       h2,
       h3,
       h4,
@@ -145,30 +140,18 @@
         font-size: 1.125rem;
       }
 
-      @include link(false, false);
-
-      // b, strong {
-      //   color: $global-font-secondary-color;
-
-      //   [theme=dark] & {
-      //     color: $global-font-secondary-color-dark;
-      //   }
-      // }
+      @include link(false, true);
     }
 
     .post-footer {
       margin-top: .4rem;
-      display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: .875rem;
 
-      @include link(false, false);
 
       .post-tags {
-        padding: 0;
-
-        @include link(true, true);
+        padding: 0;        
       }
     }
   }

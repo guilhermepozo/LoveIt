@@ -46,11 +46,11 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags">
+        <section class="post-tag">
             {{- with .Params.tags -}}
-                <i class="fas fa-tags fa-fw"></i>&nbsp;
+                <i class="drac-text-purple fas fa-tags fa-fw"></i>&nbsp;
                 {{- range $index, $value := . -}}
-                    {{- if gt $index 0 }},&nbsp;{{ end -}}
+                    {{- if gt $index 0 }}<span class="drac-text-purple">,&nbsp;</span>{{ end -}}
                     {{- $tag := partialCached "function/path.html" $value $value | printf "/tags/%v" | $.Site.GetPage -}}
                     <a href="{{ $tag.RelPermalink }}">{{ $tag.Title }}</a>
                 {{- end -}}
@@ -63,10 +63,14 @@
 
     <div class="post-nav">
         {{- if .PrevInSection -}}
-            <a href="{{ .PrevInSection.RelPermalink }}" class="prev" rel="prev" title="{{ .PrevInSection.Title }}"><i class="fas fa-angle-left fa-fw"></i>{{ .PrevInSection.Title }}</a>
+        <span class="drac-text-black">
+            <a href="{{ .PrevInSection.RelPermalink }}" class="prev " rel="prev" title="{{ .PrevInSection.Title }}"><i class="fas fa-angle-left fa-fw"></i>{{ .PrevInSection.Title }}</a>
+        </span>
         {{- end -}}
         {{ if .NextInSection }}
+        <span class="drac-text-black">
             <a href="{{ .NextInSection.RelPermalink }}" class="next" rel="next" title="{{ .NextInSection.Title }}">{{ .NextInSection.Title }}<i class="fas fa-angle-right fa-fw"></i></a>
+        </span>
         {{- end -}}
     </div>
 </div>

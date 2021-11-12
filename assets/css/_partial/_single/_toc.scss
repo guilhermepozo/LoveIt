@@ -84,7 +84,7 @@
 
     ul {
       a {
-        color: #9580FF; 
+        color: #FF80BF; 
       }
       ul {
 
@@ -92,21 +92,17 @@
       }
 
       .has-active > a, a:active {
-          color: #FF9580; 
+          color: #F8F8F2; 
       }
 
-      .has-active > li >ul {
-          a{
-            color: #9580FF;
-
+      .active > a {
+          a {
+            color: #FF80BF;
         }       
       }
 
       .has-active > ul {
-        a {
-          color: #FF9480;
-        }
-       
+        color: #F8F8F2;
         display: block;
       }
     }    

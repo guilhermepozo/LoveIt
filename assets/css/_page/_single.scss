@@ -4,14 +4,14 @@
   .single-title {
     margin: 1rem 0 .5rem;
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 140%;
   }
 
   .single-subtitle {
     margin: .4rem 0;
     font-size: 1.2rem;
-    font-weight: normal;
+    font-weight: 400;
     font-style: italic;
     line-height: 100%;
   }
@@ -52,6 +52,8 @@
   }
 
   .content {
+    font-weight: 300;
+
     > h2 {
       font-size: 1.5rem;
 
@@ -140,7 +142,7 @@
     }
     a:active,
     a:hover {
-      color: $single-link-color-dark;
+      color: #b2fff2;
 
     }
     // [theme=dark] a:hover b, [theme=dark] a:hover strong {
