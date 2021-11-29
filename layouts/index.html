@@ -32,6 +32,9 @@
             {{- else -}}
                 {{- $pages = .Paginate $pages -}}
             {{- end -}}
+            <div class="pagina-inicial-titulo drac-text-cyan-green">
+                <h1>Posts. Artigos. Textos.</h1>
+            </div>
             {{- range $pages.Pages -}}
                 {{- .Render "summary" -}}
             {{- end -}}

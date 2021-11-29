@@ -1,17 +1,12 @@
 header {
-  border-bottom: 2px solid #414558;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(to right, #80ffea 0%, #8aff80 13%, #ffca80 25%, #ff80bf 40%, #9580FF 65%, #FF9580 85%, #FFFF80 100%);
+  border-image-slice: 1;
   width: 100%;
   z-index: 150;
   background-color: $header-background-color;
   @include transition(box-shadow 0.3s ease);
-  a {
-    color: #F8F8F2;
-  }
-  a:hover {
-    color: #F8F8F2;
-    background-color: #21222c;
-    border-radius: 5px;
-  }
+
   [theme=dark] & {
     background-color: $header-background-color-dark;
   }
@@ -40,7 +35,6 @@ header {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-
   width: 100%;
 }
 
@@ -60,6 +54,7 @@ header {
 
 .menu .menu-item {
   position: relative;
+
 }
 
 .language-select {
@@ -178,6 +173,14 @@ header {
     }
 
     .menu {
+      a {
+        color: #F8F8F2;
+      }
+      a:hover {
+        color: #F8F8F2;
+        background-color: #21222c;
+        border-radius: 5px;
+      }
       overflow: hidden;
       white-space: nowrap;
 

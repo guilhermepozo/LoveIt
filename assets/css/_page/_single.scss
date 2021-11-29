@@ -1,6 +1,7 @@
 @import "../_partial/_single/toc";
 
 .single {
+
   .single-title {
     margin: 1rem 0 .5rem;
     font-size: 1.6rem;
@@ -24,13 +25,10 @@
       display: inline-block;
     }
 
-    // [theme=dark] & {
-    //   color: $global-font-secondary-color-dark;
-    // }
-
     @include link(false, false);
 
     .author {
+      color: #F8F8F2;
       font-size: 1.05rem;
     }
   }
@@ -136,18 +134,12 @@
     a, a::before, a::after  {
       @include overflow-wrap(break-word);
       color: $single-link-color-dark;
-      // [theme=dark] & b, [theme=dark] & strong {
-      //   color: $single-link-color-dark;
-      // }
     }
     a:active,
     a:hover {
       color: #b2fff2;
 
     }
-    // [theme=dark] a:hover b, [theme=dark] a:hover strong {
-    //   color: $single-link-hover-color-dark;
-    // }
 
     ul, ol {
       margin: .5rem 0;
