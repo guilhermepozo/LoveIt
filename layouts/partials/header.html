@@ -1,24 +1,18 @@
 {{- /* Desktop header */ -}}
-<header class="desktop" id="header-desktop">
+<header class="desktop " id="header-desktop">
     <div class="header-wrapper">
-        <div class="header-title drac-text-black ">
-            <a href="{{ .Site.Home.RelPermalink }}" class="drac-text-black" title="{{ .Site.Title }}">
+        <div class="header-title">
+            <a href="{{ .Site.Home.RelPermalink }}"  title="{{ .Site.Title }}">
                 {{- with .Site.Params.header.title -}}
                     {{- with .logo -}}
                         {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
                     {{- end -}}
                     {{- with .pre -}}
-                        <span class="header-title-pre drac-text-black">{{ . | safeHTML }}</span>
+                        <span class="header-title-pre drac-text-pink-purple">{{ . | safeHTML }}</span>
                     {{- end -}}
-                    {{- if .typeit -}}
-                        {{- $id := dict "Content" .name "Scratch" $.Scratch | partial "function/id.html" -}}
-                        <span id="{{ $id }}" class="typeit drac-text-black drac-text-white-secondary--hover"></span>
-                        {{- dict $id (slice $id) | dict "typeitMap" | merge ($.Scratch.Get "this") | $.Scratch.Set "this" -}}
-                    {{- else -}}
-                        {{- .name -}}
-                    {{- end -}}
+                    {{- .name -}}
                     {{- with .post -}}
-                        <span class="header-title-post drac-text-black">{{ . | safeHTML }}</span>
+                        <span class="header-title-post drac-text-pink-purple">{{ . | safeHTML }}</span>
                     {{- end -}}
                 {{- else -}}
                     {{- .Site.Title -}}
@@ -32,51 +26,10 @@
                     {{- with .Page -}}
                         {{- $url = .RelPermalink -}}
                     {{- end -}}
-                    <a class="drac-text-black drac-text-white-secondary--hover menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
-                        {{- .Pre | safeHTML }} {{ .Name }} {{ .Post | safeHTML -}}
+                    <a class="menu-item{{ if $.IsMenuCurrent `main` . | or ($.HasMenuCurrent `main` .) | or (eq $.RelPermalink $url) }} active{{ end }}" href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
+                        {{- .Pre | safeHTML }}{{ .Name }}{{ .Post | safeHTML -}}
                     </a>
                 {{- end -}}
-                <!-- {{- if .Site.Menus.main -}}
-                    <span class="menu-item delimiter"></span>
-                {{- end -}} -->
-                <!-- {{- if .Site.IsMultiLingual -}}
-                    <a href="javascript:void(0);" class="menu-item language drac-text-black" title="{{ T "selectLanguage" }}">
-                        {{- .Language.LanguageName -}}
-                        <i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
-                            {{- if eq .Kind "404" -}}
-                                {{- /* https://github.com/dillonzq/LoveIt/issues/378 */ -}}
-                                {{- range .Sites -}}
-                                    {{- $link := printf "%v/404.html" .LanguagePrefix -}}
-                                    <option value="{{ $link }}"{{ if eq . $.Site }} selected{{ end }}>
-                                        {{- .Language.LanguageName -}}
-                                    </option>
-                                {{- end -}}
-                            {{- else -}}
-                                {{- range .AllTranslations -}}
-                                    <option value="{{ .RelPermalink }}"{{ if eq .Lang $.Lang }} selected{{ end }}>
-                                        {{- .Language.LanguageName -}}
-                                    </option>
-                                {{- end -}}
-                            {{- end -}}
-                        </select>
-                    </a>
-                {{- end -}} -->
-                {{- if .Site.Params.search.enable -}}
-                    <span class="drac-text-black menu-item search" id="search-desktop">
-                        <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="{{ T `search` }}">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="{{ T `clear` }}">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span>
-                {{- end -}}
-                <a class="menu-item theme-switch"></a>
             </div>
         </div>
     </div>

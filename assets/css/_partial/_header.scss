@@ -1,9 +1,17 @@
 header {
+  border-bottom: 2px solid #414558;
   width: 100%;
   z-index: 150;
   background-color: $header-background-color;
   @include transition(box-shadow 0.3s ease);
-
+  a {
+    color: #F8F8F2;
+  }
+  a:hover {
+    color: #F8F8F2;
+    background-color: #21222c;
+    border-radius: 5px;
+  }
   [theme=dark] & {
     background-color: $header-background-color-dark;
   }
@@ -29,10 +37,10 @@ header {
 
 .header-wrapper {
   display: flex;
-  background-color: #050505;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+
   width: 100%;
 }
 
@@ -45,6 +53,9 @@ header {
   white-space: nowrap;
   text-overflow: ellipsis;
   @include flex(10);
+  a {
+    font-weight: 500;
+  }
 }
 
 .menu .menu-item {
@@ -161,21 +172,24 @@ header {
 
     .header-title {
       font-size: $header-title-font-size;
+      a {
+        color: #F8F8F2;
+      }
     }
 
     .menu {
       overflow: hidden;
       white-space: nowrap;
 
-      .menu-inner {
+      .menu-inner {        
         float: right;
       }
-
+      
       .menu-item {
-        margin: 0 .5rem;
+        padding: 10px;
 
         &.delimiter {
-          border-left: 1.5px solid $global-font-color;
+          border-left: 1.5px solid $global-font-color;      
 
           [theme=dark] & {
             border-left-color: $global-border-color-dark;
@@ -190,6 +204,7 @@ header {
           margin: 0 -.5rem 0 0;
         }
       }
+
 
       a.active {
         font-weight: 900;
