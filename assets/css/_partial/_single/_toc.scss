@@ -1,4 +1,13 @@
 .toc {
+  a {
+    padding: 3px;
+    color: #F8F8F2;
+  }
+  a:hover {
+    color: #F8F8F2;
+    background-color: #21222c;
+    border-radius: 5px;
+  }
   .toc-title {
     font-size: $toc-title-font-size;
     font-weight: bold;
@@ -17,9 +26,10 @@
         content: "|";
         font-weight: bolder;
         margin-right: .5rem;
-
       }
-
+      li {
+        padding: 2px;
+      }
       ul {
         padding-left: 1.5rem;
       }
@@ -44,15 +54,14 @@
 }
 
 #toc-auto {
-
-
   display: block;
   position: absolute;
   width: $MAX_LENGTH;
   max-width: 0;
   padding: 0 .8rem;
-  border-left: 4px solid $global-border-color;
-  @include overflow-wrap(break-word);
+  border-left: 1px solid transparent;
+  border-image: linear-gradient(to bottom, #9580FF 0%, #80ffea 13%, #8aff80 25%, #FFFF80 40%, #ffca80 65%, #FF9580 85%, #ff80bf 100%);
+  border-image-slice: 1;  @include overflow-wrap(break-word);
   box-sizing: border-box;
   top: 10rem;
   left: 0;
@@ -84,7 +93,10 @@
 
     ul {
       a {
-        color: #FF80BF; 
+        color: #a7abbe; 
+      }
+      a:hover{
+          color: #F8F8F2; 
       }
       ul {
 
@@ -97,7 +109,7 @@
 
       .active > a {
           a {
-            color: #FF80BF;
+            color: #a7abbe;
         }       
       }
 

@@ -139,7 +139,7 @@
 
 
     .content {
-
+      color: #a7abbe;
       @include box(vertical);
       -webkit-line-clamp: 3;
       width: 100%;
@@ -164,6 +164,7 @@
       }
 
       h2 {
+        
         font-size: 1.125rem;
       }
       color: #8f9ba8;

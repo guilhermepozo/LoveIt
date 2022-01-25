@@ -40,11 +40,22 @@
 }
 
 .archive-item {
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   margin: .25rem 0 .25rem 1.5rem;
+  a {
+    color: #F8F8F2;
+  }
+}
+
+.archive-item:hover {
+  cursor: pointer;
+    color: #F8F8F2;
+    background-color: #21222c;
+    border-radius: 5px;
 }
 
 .archive-item-link {
@@ -52,29 +63,11 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
-  &:hover {
-    color: $global-link-hover-color;
-    background-color: transparent;
-  }
-
-  [theme=dark] & {
-    color: $global-link-color-dark;
-
-    &:hover {
-      color: $global-link-hover-color-dark;
-    }
-  }
 }
 
 .archive-item-date {
-  width: 4em;
+  color: #F8F8F2;
   text-align: right;
-  color: $global-font-secondary-color;
-
-  [theme=dark] & {
-    color: $global-font-secondary-color-dark;
-  }
 }
 
 .more-post {

@@ -12,12 +12,12 @@ other = "Ver comentários"
 
 # === Post ===
 [posts]
-other = "Posts"
+other = "posts"
 # === Post ===
 
 # === Taxonomy ===
 [allSome]
-other = "Todos {{ .Some }}"
+other = "Todos os {{ .Some }}"
 
 [tag]
 other = "Tag"

@@ -32,7 +32,12 @@
                             {{- .Title -}}
                         </a>
                         <span class="archive-item-date">
-                            {{- $.Site.Params.list.dateFormat | default "01-02" | .Date.Format -}}
+                            {{- with .Date -}}
+                            {{ $month_names := slice "Jan" "Fev" "Mar" "Abr" "Mai" "Jun" "Jul" "Ago" "Set" "Out" "Nov" "Dez" }}
+                            {{ $month := sub .Month 1 }}
+                            {{ $mes := index $month_names $month }}
+                            {{- printf `<span class="drac-heading-sm drac-text-normal">%v %v, %v</span>` .Day $mes .Year | safeHTML -}}
+                            {{- end -}}
                         </span>
                     </article>
                 {{- end -}}
