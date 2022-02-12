@@ -12,12 +12,12 @@ other = "Ver comentários"
 
 # === Post ===
 [posts]
-other = "Posts"
+other = "posts"
 # === Post ===
 
 # === Taxonomy ===
 [allSome]
-other = "Todos {{ .Some }}"
+other = "Todos os {{ .Some }}"
 
 [tag]
 other = "Tag"
@@ -106,10 +106,10 @@ other = "Compartilhe em"
 other = "Conteúdos"
 
 [publishedOnDate]
-other = "publicado em {{ .Date }}"
+other = "publicou no dia {{ .Date }}"
 
 [includedInCategories]
-other = "incluido em {{ .Categories }}"
+other = "em {{ .Categories }}"
 
 [wordCount]
 one = "Uma palavra"

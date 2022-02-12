@@ -8,6 +8,7 @@ theme = "LoveIt"
 # themes directory
 # 主题目录
 themesDir = "../.."
+ignoreErrors = ["error-missing-instagram-accesstoken"]
 
 # website title
 # 网站标题
@@ -18,7 +19,7 @@ title = "LoveIt"
 enableRobotsTXT = true
 # whether to use git commit log
 # 是否使用 git 信息
-enableGitInfo = true
+enableGitInfo = false
 # whether to use emoji code
 # 是否使用 emoji 代码
 enableEmoji = true
@@ -635,7 +636,7 @@ enableEmoji = true
   fingerprint = ""
   # date format
   # 日期格式
-  dateFormat = "2006-01-02"
+  dateFormat = "01-02-2006"
   # website images for Open Graph and Twitter Cards
   # 网站图片, 用于 Open Graph 和 Twitter Cards
   images = ["/logo.png"]
@@ -1123,3 +1124,9 @@ enableEmoji = true
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
   taxonomyTerm = ["HTML"]
+
+
+[module]
+[[module.mounts]]
+source = "../node_modules/@dracula/dracula-ui/styles"
+target = "assets/css/custom-styles"

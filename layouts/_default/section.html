@@ -5,8 +5,8 @@
 {{- define "content" -}}
     <div class="page archive">
         {{- /* Title */ -}}
-        <h2 class="single-title animated pulse faster">
-            {{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" -}}
+        <h2 class="single-title">
+            <span class="drac-text-cyan-green">{{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" -}}</span>
         </h2>
 
         {{- /* Paginate */ -}}
@@ -18,15 +18,20 @@
                 {{- $pages = .Paginate $pages -}}
             {{- end -}}
             {{- range $pages.PageGroups -}}
-                <h3 class="group-title">{{ .Key }}</h3>
+                <h3 class="group-title"><span class="drac-text-yellow-pink">{{ .Key }}</span></h3>
                 {{- range .Pages -}}
-                    <article class="archive-item">
+                    <article class="archive-item" onClick="location.href='{{ .RelPermalink }}'" >
                         <a href="{{ .RelPermalink }}" class="archive-item-link">
                             {{- .Title -}}
                         </a>
-                        <span class="archive-item-date">
-                            {{- $.Site.Params.section.dateFormat | default "01-02" | .Date.Format -}}
-                        </span>
+                        <span class="dract-text-white archive-item-date">
+                            {{- with .Date -}}
+                            {{ $month_names := slice "Jan" "Fev" "Mar" "Abr" "Mai" "Jun" "Jul" "Ago" "Set" "Out" "Nov" "Dez" }}
+                            {{ $month := sub .Month 1 }}
+                            {{ $mes := index $month_names $month }}
+                            {{- printf `<span class="drac-heading-sm drac-text-normal">%v %v, %v</span>` .Day $mes .Year | safeHTML -}}
+                            {{- end -}}
+                        </span>                            
                     </article>
                 {{- end -}}
             {{- end -}}

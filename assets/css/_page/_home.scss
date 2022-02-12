@@ -66,6 +66,35 @@
   }
 }
 
+.title-box {
+  padding: 0 15px;
+  cursor: pointer;
+  &:hover {
+    color: #F8F8F2;
+    background-color: #21222c;
+    border-radius: 5px;
+  }
+  // background: /* gradient can be an image */
+  // linear-gradient(
+  //   to left,
+  //   #8aff80 0%,
+  //   #80ffea 63%,
+  //   #21222c 90%,
+  //   #21222c 100%
+  // )
+  // left 
+  // bottom
+  // no-repeat; 
+
+  background-size:100% 1px;/* if linear-gradient, we need to resize it */
+  display: flex;
+  align-items: center;
+  h1 {
+    font-weight: 400;
+  }
+  // line-height: 0.5;
+}
+
 .home[posts] {
   .home-profile {
     @include transform(translateY(0));
@@ -75,21 +104,13 @@
   .home-avatar img {
     width: 6rem;
   }
-
+  
   .summary {
-    padding-top: 1rem;
-    padding-bottom: .8rem;
-    color: $global-font-color;
-    border-bottom: 1px dashed $global-border-color;
-
-    [theme=dark] & {
-      color: $global-font-color-dark;
-      border-bottom: 1px dashed $global-border-color-dark;
-    }
+      // padding-top: 1rem;
+      // padding-bottom: .8rem;
 
     .featured-image-preview {
       width: 100%;
-      padding: 30% 0 0;
       position: relative;
       margin: 0.6rem auto;
       @include transition(transform 0.4s ease);
@@ -114,24 +135,18 @@
 
     .single-title {
       font-size: 1.25rem;
-      line-height: 140%;
-      margin: 0.4rem 0;
     }
 
+
     .content {
+      color: #a7abbe;
       @include box(vertical);
       -webkit-line-clamp: 3;
-      margin-top: .3rem;
       width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
       @include overflow-wrap(break-word);
-      color: $global-font-secondary-color;
-
-      [theme=dark] & {
-        color: $global-font-secondary-color-dark;
-      }
-
+      font-weight: 300;
       h2,
       h3,
       h4,
@@ -149,33 +164,29 @@
       }
 
       h2 {
+        
         font-size: 1.125rem;
       }
-
-      @include link(false, true);
+      color: #8f9ba8;
 
       b, strong {
-        color: $global-font-secondary-color;
-
-        [theme=dark] & {
-          color: $global-font-secondary-color-dark;
-        }
+        color: #b2c0d1;
       }
+
+      
+      @include link(false, true);
     }
 
     .post-footer {
+
       margin-top: .4rem;
-      display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: .875rem;
 
-      @include link(false, false);
 
       .post-tags {
-        padding: 0;
-
-        @include link(true, true);
+        padding: 0;        
       }
     }
   }

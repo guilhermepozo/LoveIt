@@ -1,4 +1,7 @@
 header {
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, #9580FF 0%, #80ffea 13%, #8aff80 25%, #FFFF80 40%, #ffca80 65%, #FF9580 85%, #ff80bf 100%);
+  border-image-slice: 1;
   width: 100%;
   z-index: 150;
   background-color: $header-background-color;
@@ -37,17 +40,21 @@ header {
 
 .header-title {
   font-family: $header-title-font-family;
-  font-weight: bold;
+  font-weight: 400;
   margin-right: .5rem;
   min-width: 10%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   @include flex(10);
+  a {
+    font-weight: 500;
+  }
 }
 
 .menu .menu-item {
   position: relative;
+
 }
 
 .language-select {
@@ -160,21 +167,32 @@ header {
 
     .header-title {
       font-size: $header-title-font-size;
+      a {
+        color: #F8F8F2;
+      }
     }
 
     .menu {
+      a {
+        color: #F8F8F2;
+      }
+      a:hover {
+        color: #F8F8F2;
+        background-color: #21222c;
+        border-radius: 5px;
+      }
       overflow: hidden;
       white-space: nowrap;
 
-      .menu-inner {
+      .menu-inner {        
         float: right;
       }
-
+      
       .menu-item {
-        margin: 0 .5rem;
+        padding: 10px;
 
         &.delimiter {
-          border-left: 1.5px solid $global-font-color;
+          border-left: 1.5px solid $global-font-color;      
 
           [theme=dark] & {
             border-left-color: $global-border-color-dark;
@@ -189,6 +207,7 @@ header {
           margin: 0 -.5rem 0 0;
         }
       }
+
 
       a.active {
         font-weight: 900;

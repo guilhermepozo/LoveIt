@@ -1,17 +1,27 @@
 @import "../_partial/_single/toc";
 
 .single {
+  a {
+    color: #F8F8F2;
+    padding: 0px 3px ;
+  }
+  a:hover {
+    color: #F8F8F2;
+    background-color: #21222c;
+    border-radius: 5px;
+  }
+  
   .single-title {
     margin: 1rem 0 .5rem;
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 140%;
   }
 
   .single-subtitle {
     margin: .4rem 0;
     font-size: 1.2rem;
-    font-weight: normal;
+    font-weight: 400;
     font-style: italic;
     line-height: 100%;
   }
@@ -19,18 +29,28 @@
   .post-meta {
     font-size: .875rem;
     color: $global-font-secondary-color;
+    .post-meta-line{
 
+      a {
+        color: #F8F8F2;
+        padding: 5px;
+
+      }
+      a:hover {
+        color: #F8F8F2;
+        background-color: #21222c;
+        border-radius: 5px;
+      }
+      
+    }
     span {
       display: inline-block;
     }
 
-    [theme=dark] & {
-      color: $global-font-secondary-color-dark;
-    }
-
-    @include link(false, true);
+    @include link(false, false);
 
     .author {
+      color: #F8F8F2;
       font-size: 1.05rem;
     }
   }
@@ -52,15 +72,21 @@
   }
 
   .content {
+
+    color: #a7abbe;
+
+    font-weight: 300;
+
     > h2 {
       font-size: 1.5rem;
-
+      color: #F8F8F2;
       & code {
         font-size: 1.25rem;
       }
     }
 
     > h3 {
+      color: #F8F8F2;
       font-size: 1.375rem;
 
       & code {
@@ -69,6 +95,7 @@
     }
 
     > h4 {
+      color: #F8F8F2;
       font-size: 1.25rem;
 
       & code {
@@ -77,10 +104,12 @@
     }
 
     > h5 {
+      color: #F8F8F2;
       font-size: 1.125rem;
     }
 
     > h6 {
+      color: #F8F8F2;
       font-size: 1rem;
     }
 
@@ -104,7 +133,7 @@
     > h6 {
       > .header-mark::before {
         content: "|";
-        margin-right: .3125rem;
+        margin-left: -5px;
         color: $single-link-color;
 
         [theme=dark] & {
@@ -114,10 +143,15 @@
     }
 
     > h2 > .header-mark::before {
+      margin-left: -5px;
+
       content: "#";
     }
 
     p {
+      a {
+        text-decoration: underline;  
+  }
       margin: .5rem 0;
     }
 
@@ -131,16 +165,14 @@
 
     @include link(false, false);
 
-    a {
+    a, a::before, a::after  {
       @include overflow-wrap(break-word);
-
-      [theme=dark] & b, [theme=dark] & strong {
-        color: $single-link-color-dark;
-      }
+      color: $single-link-color-dark;
     }
+    a:active,
+    a:hover {
+      color: #F8F8F2;
 
-    [theme=dark] a:hover b, [theme=dark] a:hover strong {
-      color: $single-link-hover-color-dark;
     }
 
     ul, ol {

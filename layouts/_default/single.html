@@ -1,11 +1,10 @@
 {{- define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end -}}
-
 {{- define "content" -}}
     {{- $params := .Scratch.Get "params" -}}
     <div class="page single special">
         {{- /* Title */ -}}
-        <h1 class="single-title animated pulse faster">
-            {{- .Title -}}
+        <h1 class="single-title">
+            <span class="drac-text-pink-purple">{{- .Title -}}</h1></span>
         </h1>
 
         {{- /* Subtitle */ -}}

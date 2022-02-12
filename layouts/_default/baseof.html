@@ -1,27 +1,24 @@
 {{- partial "init.html" . -}}
 
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        {{ $dracula := resources.Get "@dracula/dracula-ui/styles/dracula-ui.css" | resources.Minify }} 
+        {{ $dracula := resources.Get "css/custom-styles/dracula-ui.css" }} 
         <link rel="stylesheet" href="{{ $dracula.Permalink }}">
         <title>
             {{- block "title" . }}{{ .Site.Title }}{{ end -}}
         </title>
-
         {{- partial "head/meta.html" . -}}
         {{- partial "head/link.html" . -}}
         {{- partial "head/seo.html" . -}}
     </head>
-    <body header-desktop="{{ .Site.Params.header.desktopMode }}" header-mobile="{{ .Site.Params.header.mobileMode }}">
+    <body header-desktop="{{ .Site.Params.header.desktopMode }}"  theme="dark" class="drac-scrollbar-pink" header-mobile="{{ .Site.Params.header.mobileMode }}">
         {{- /* Check theme isDark before body rendering */ -}}
         {{- $theme := .Site.Params.defaulttheme -}}
-        <script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('{{ $theme }}' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '{{ $theme }}' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
         <div id="mask"></div>
 
         {{- /* Body wrapper */ -}}
@@ -37,7 +34,7 @@
 
         <div id="fixed-buttons">
             {{- /* top button */ -}}
-            <a href="#" id="back-to-top" class="fixed-button" title="{{ T `backToTop` }}">
+            <a href="#" id="back-to-top" class="fixed-button drac-bg-black drac-text-black" title="{{ T `backToTop` }}">
                 <i class="fas fa-arrow-up fa-fw"></i>
             </a>
 

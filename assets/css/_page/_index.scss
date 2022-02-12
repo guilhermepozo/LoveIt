@@ -8,10 +8,15 @@
     padding-top: $header-height;
   }
 
-  [header-desktop=normal] & {
+  [header-desktop="normal"] & {
     padding-top: 0;
   }
-
+  .pagina-inicial-titulo {
+    h1 {
+      line-height: 140%;
+      font-weight: 400;
+    }
+  }
   @include blur;
 }
 

@@ -1,8 +1,11 @@
 #fixed-buttons {
   display: none;
+  
 }
 
 .fixed-button {
+  color: #F8F8F2;
+
   display: none;
   z-index: 100;
   position: fixed;
@@ -10,15 +13,12 @@
   font-size: 1rem;
   line-height: 1.3rem;
   padding: .6rem .6rem;
-  color: $global-font-secondary-color;
-  background: $header-background-color;
   @include border-radius(2rem);
   @include transition(color 0.4s ease);
 
   @include blur;
 
   &:hover, &:active {
-    color: $global-font-color;
     cursor: pointer;
   }
 
@@ -26,14 +26,13 @@
     outline: none;
   }
 
-  [theme=dark] & {
-    color: $global-font-secondary-color-dark;
-    background: $header-background-color-dark;
+  // [theme=dark] & {
+  //   color: $global-font-secondary-color-dark;
 
-    &:hover, &:active {
-      color: $global-font-color-dark;
-    }
-  }
+  //   &:hover, &:active {
+  //     color: $global-font-color-dark;
+  //   }
+  // }
 }
 
 #back-to-top {

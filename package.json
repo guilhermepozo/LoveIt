@@ -3,17 +3,17 @@
   "version": "0.2.0",
   "description": "LoveIt theme source file",
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
+    "@dracula/dracula-ui": "^0.8.1",
+    "babel-cli": "^6.26.0",
     "babel-preset-minify": "^0.5.1",
     "babelify": "^10.0.0",
     "browserify": "^16.5.0",
     "core-js": "^3.6.4",
     "husky": "^4.2.3",
-    "minimist": "^1.2.5",
     "segmentit": "^2.0.3"
   },
   "scripts": {
@@ -25,9 +25,6 @@
     "start-production": "npm run babel && hugo server --source=exampleSite --themesDir ../.. -D --disableFastRender -e production",
     "check": "htmlproofer exampleSite/public --check-html --allow-hash-href --empty-alt-ignore --disable-external",
     "copy": "rm -rf resources && cp -rf exampleSite/resources resources"
-  },
-  "resolutions": {
-    "minimist": "^1.2.5"
   },
   "husky": {
     "hooks": {

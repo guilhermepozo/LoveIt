@@ -1,4 +1,13 @@
 .toc {
+  a {
+    padding: 3px;
+    color: #F8F8F2;
+  }
+  a:hover {
+    color: #F8F8F2;
+    background-color: #21222c;
+    border-radius: 5px;
+  }
   .toc-title {
     font-size: $toc-title-font-size;
     font-weight: bold;
@@ -17,13 +26,10 @@
         content: "|";
         font-weight: bolder;
         margin-right: .5rem;
-        color: $single-link-color;
-
-        [theme=dark] & {
-          color: $single-link-color-dark;
-        }
       }
-
+      li {
+        padding: 2px;
+      }
       ul {
         padding-left: 1.5rem;
       }
@@ -53,8 +59,9 @@
   width: $MAX_LENGTH;
   max-width: 0;
   padding: 0 .8rem;
-  border-left: 4px solid $global-border-color;
-  @include overflow-wrap(break-word);
+  border-left: 1px solid transparent;
+  border-image: linear-gradient(to bottom, #9580FF 0%, #80ffea 13%, #8aff80 25%, #FFFF80 40%, #ffca80 65%, #FF9580 85%, #ff80bf 100%);
+  border-image-slice: 1;  @include overflow-wrap(break-word);
   box-sizing: border-box;
   top: 10rem;
   left: 0;
@@ -68,8 +75,8 @@
 
   [theme=dark] & {
     border-left-color: $global-border-color-dark;
-  }
-
+  }    
+  
   .toc-title {
     margin: .8rem 0;
   }
@@ -83,32 +90,35 @@
       margin: .625rem 0;
     }
 
+
     ul {
+      a {
+        color: #a7abbe; 
+      }
+      a:hover{
+          color: #F8F8F2; 
+      }
       ul {
-        display: none;
+
+       display: none;
+      }
+
+      .has-active > a, a:active {
+          color: #F8F8F2; 
+      }
+
+      .active > a {
+          a {
+            color: #a7abbe;
+        }       
       }
 
       .has-active > ul {
+        color: #F8F8F2;
         display: block;
       }
-    }
+    }    
 
-    a.active {
-      font-weight: bold;
-      color: $single-link-color;
-
-      [theme=dark] & {
-        color: $single-link-color-dark;
-      }
-
-      &::before {
-        color: $single-link-hover-color;
-
-        [theme=dark] & {
-          color: $single-link-hover-color-dark;
-        }
-      }
-    }
   }
 }
 
