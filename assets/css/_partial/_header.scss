@@ -1,14 +1,14 @@
 header {
-  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
   border-image: linear-gradient(to right, #9580FF 0%, #80ffea 13%, #8aff80 25%, #FFFF80 40%, #ffca80 65%, #FF9580 85%, #ff80bf 100%);
   border-image-slice: 1;
   width: 100%;
   z-index: 150;
-  background-color: $header-background-color;
+  background-color: transparent;
   @include transition(box-shadow 0.3s ease);
 
   [theme=dark] & {
-    background-color: $header-background-color-dark;
+    background-color: transparent;
   }
 
   .logo {
@@ -177,6 +177,7 @@ header {
         color: #F8F8F2;
       }
       a:hover {
+        @include transition(all 0.3s ease-in-out);
         color: #F8F8F2;
         background-color: #21222c;
         border-radius: 5px;

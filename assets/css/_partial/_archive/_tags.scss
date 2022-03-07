@@ -10,7 +10,7 @@
     @include overflow-wrap(break-word);
     @include transition(all ease-out 0.3s);
 
-    &:active,
+    &:active, 
     &:focus,
     &:hover {
       @include transform(scale(1.2));

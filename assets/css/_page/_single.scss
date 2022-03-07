@@ -6,6 +6,7 @@
     padding: 0px 3px ;
   }
   a:hover {
+    @include transition(all 0.3s ease-in-out);
     color: #F8F8F2;
     background-color: #21222c;
     border-radius: 5px;

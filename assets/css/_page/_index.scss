@@ -14,7 +14,9 @@
   .pagina-inicial-titulo {
     h1 {
       line-height: 140%;
-      font-weight: 400;
+      font-weight: 700;
+      font-size: 2em;
+
     }
   }
   @include blur;

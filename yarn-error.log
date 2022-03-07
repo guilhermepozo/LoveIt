@@ -1,0 +1,81 @@
+Arguments: 
+  /home/pozo/.nvm/versions/node/v16.14.0/bin/node /home/pozo/.nvm/versions/node/v16.14.0/bin/yarn
+
+PATH: 
+  /home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/pozo/anaconda3/condabin:/home/pozo/.nvm/versions/node/v16.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/Git/cmd:/mnt/c/HashiCorp/Vagrant/bin:/mnt/c/Users/guilherme.pozo/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/guilherme.pozo/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/guilherme.pozo/AppData/Local/Programs/Rancher Desktop/resources/resources/win32/bin:/mnt/c/Users/guilherme.pozo/AppData/Local/Programs/Rancher Desktop/resources/resources/linux/bin:/snap/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.14.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: Failed to replace env in config: ${NPM_TOKEN}
+      at /home/pozo/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:99004:13
+      at String.replace (<anonymous>)
+      at envReplace (/home/pozo/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:98999:16)
+      at Function.normalizeConfig (/home/pozo/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:31930:69)
+      at NpmRegistry.<anonymous> (/home/pozo/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:31960:34)
+      at Generator.next (<anonymous>)
+      at step (/home/pozo/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/pozo/.nvm/versions/node/v16.14.0/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "loveit-src",
+    "version": "0.2.0",
+    "description": "LoveIt theme source file",
+    "private": true,
+    "devDependencies": {
+      "@babel/cli": "^7.8.4",
+      "@babel/core": "^7.9.0",
+      "@babel/preset-env": "^7.9.0",
+      "@dracula/dracula-ui": "^0.8.1",
+      "babel-cli": "^6.26.0",
+      "babel-preset-minify": "^0.5.1",
+      "babelify": "^10.0.0",
+      "browserify": "^16.5.0",
+      "core-js": "^3.6.4",
+      "husky": "^4.2.3",
+      "segmentit": "^2.0.3"
+    },
+    "scripts": {
+      "preinstall": "npx npm-force-resolutions",
+      "babel": "npx babel src/js --out-file assets/js/theme.min.js --source-maps",
+      "build": "npm run babel && hugo -v --source=exampleSite --themesDir ../.. --gc",
+      "build-lunr-segmentit": "browserify src/lib/lunr.segmentit.js -o assets/lib/lunr/lunr.segmentit.js -t babelify --presets @babel/preset-env --presets minify",
+      "start": "npm run babel && hugo server --source=exampleSite --themesDir ../.. -D --disableFastRender",
+      "start-production": "npm run babel && hugo server --source=exampleSite --themesDir ../.. -D --disableFastRender -e production",
+      "check": "htmlproofer exampleSite/public --check-html --allow-hash-href --empty-alt-ignore --disable-external",
+      "copy": "rm -rf resources && cp -rf exampleSite/resources resources"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm run build && npm run copy && git add resources assets/js"
+      }
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/dillonzq/LoveIt.git"
+    },
+    "keywords": [
+      "hugo",
+      "theme"
+    ],
+    "author": "Dillon",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/dillonzq/LoveIt/issues"
+    },
+    "homepage": "https://github.com/dillonzq/LoveIt#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

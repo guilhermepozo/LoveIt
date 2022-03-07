@@ -1,48 +1,50 @@
 {{- define "title" -}}
-    {{- .Title }} - {{ T .Data.Singular | default .Data.Singular }} - {{ .Site.Title -}}
+{{- .Title }} - {{ T .Data.Singular | default .Data.Singular }} - {{ .Site.Title -}}
 {{- end -}}
 
 {{- define "content" -}}
-    <div class="page archive">
-        {{- /* Title */ -}}
-        <h2 class="single-title animated pulse faster">
+<div class="page archive">
+    {{- /* Title */ -}}
+    <h2 class="single-title">
+        <span class="drac-text-purple-cyan">
             {{- $taxonomy := .Data.Singular -}}
             {{- if eq $taxonomy "category" -}}
-                <i class="far fa-folder-open fa-fw"></i>&nbsp;{{ .Title }}
+            <i class="far fa-folder-open fa-fw"></i>&nbsp;{{ .Title }}
             {{- else if eq $taxonomy "tag" -}}
-                <i class="fas fa-tag fa-fw"></i>&nbsp;{{ .Title }}
+            <i class="fas fa-tag fa-fw"></i>&nbsp;{{ .Title }}
             {{- else -}}
-                {{- printf "%v - %v" (T $taxonomy | default $taxonomy) .Title -}}
+            {{- printf "%v - %v" (T $taxonomy | default $taxonomy) .Title -}}
             {{- end -}}
-        </h2>
+        </span>
+    </h2>
 
-        {{- /* Paginate */ -}}
-        {{- if .Pages -}}
-            {{- $pages := .Pages.GroupByDate "2006" -}}
-            {{- with .Site.Params.list.paginate | default .Site.Params.paginate -}}
-                {{- $pages = $.Paginate $pages . -}}
-            {{- else -}}
-                {{- $pages = .Paginate $pages -}}
+    {{- /* Paginate */ -}}
+    {{- if .Pages -}}
+    {{- $pages := .Pages.GroupByDate "2006" -}}
+    {{- with .Site.Params.list.paginate | default .Site.Params.paginate -}}
+    {{- $pages = $.Paginate $pages . -}}
+    {{- else -}}
+    {{- $pages = .Paginate $pages -}}
+    {{- end -}}
+    {{- range $pages.PageGroups -}}
+    <h3 class="group-title"><span class="drac-text-yellow-pink">{{ .Key }}</span></h3>
+    {{- range .Pages -}}
+    <article class="archive-item">
+        <a href="{{ .RelPermalink }}" class="archive-item-link">
+            {{- .Title -}}
+        </a>
+        <span class="archive-item-date">
+            {{- with .Date -}}
+            {{ $month_names := slice "Jan" "Fev" "Mar" "Abr" "Mai" "Jun" "Jul" "Ago" "Set" "Out" "Nov" "Dez" }}
+            {{ $month := sub .Month 1 }}
+            {{ $mes := index $month_names $month }}
+            {{- printf `<span class="drac-heading-sm drac-text-normal">%v %v, %v</span>` .Day $mes .Year | safeHTML -}}
             {{- end -}}
-            {{- range $pages.PageGroups -}}
-                <h3 class="group-title">{{ .Key }}</h3>
-                {{- range .Pages -}}
-                    <article class="archive-item">
-                        <a href="{{ .RelPermalink }}" class="archive-item-link">
-                            {{- .Title -}}
-                        </a>
-                        <span class="archive-item-date">
-                            {{- with .Date -}}
-                            {{ $month_names := slice "Jan" "Fev" "Mar" "Abr" "Mai" "Jun" "Jul" "Ago" "Set" "Out" "Nov" "Dez" }}
-                            {{ $month := sub .Month 1 }}
-                            {{ $mes := index $month_names $month }}
-                            {{- printf `<span class="drac-heading-sm drac-text-normal">%v %v, %v</span>` .Day $mes .Year | safeHTML -}}
-                            {{- end -}}
-                        </span>
-                    </article>
-                {{- end -}}
-            {{- end -}}
-            {{- partial "paginator.html" . -}}
-        {{- end -}}
-    </div>
+        </span>
+    </article>
+    {{- end -}}
+    {{- end -}}
+    {{- partial "paginator.html" . -}}
+    {{- end -}}
+</div>
 {{- end -}}
