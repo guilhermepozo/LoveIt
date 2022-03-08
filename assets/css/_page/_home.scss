@@ -69,9 +69,12 @@
 .title-box {
   padding: 0 15px;
   cursor: pointer;
+  a{
+    text-decoration: none;
+  }
   &:hover {
     color: #F8F8F2;
-    background-color: #21222c;
+    background-color: #313131;
     border-radius: 5px;
   }
   // background: /* gradient can be an image */
@@ -139,7 +142,7 @@
 
 
     .content {
-      color: #a7abbe;
+      color: #a2a1a1;
       @include box(vertical);
       -webkit-line-clamp: 3;
       width: 100%;

@@ -49,16 +49,14 @@ $code-background-color-dark: #272C34 !default;
   }
 
   code, pre, pre code {
-    font-size: 90%;
+    font-size: 100%;
     @include overflow-wrap(break-word);
     @include line-break(anywhere);
     @include tab-size(4);
     color: $code-color;
-    background: $code-background-color;
 
     [theme=dark] & {
       color: $code-color-dark;
-      background: $code-background-color-dark;
     }
   }
 

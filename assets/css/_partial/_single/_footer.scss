@@ -1,14 +1,21 @@
 .post-footer {
   margin-top: 3rem;
-  color: #414558;
+  color: #7f7d7d;
 
   .post-info {
-    border-bottom: 1px solid $global-border-color;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(
+      to left,
+      #9580ff 0%,
+      #80ffea 13%,
+      #8aff80 25%,
+      #ffff80 40%,
+      #ffca80 65%,
+      #ff9580 85%,
+      #ff80bf 100%
+    );
+    border-image-slice: 1;
     padding: 1rem 0 0.3rem;
-
-    [theme=dark] & {
-      border-bottom: 1px solid $global-border-color-dark;
-    }
 
     .post-info-line {
       display: flex;
@@ -37,20 +44,61 @@
         a * {
           vertical-align: text-bottom;
         }
+
+        a {
+          padding: 3px;
+
+          color: #f8f8f2;
+          text-decoration: none;
+        }
+        a:hover {
+          padding: 3px;
+          @include transition(all 0.3s ease-in-out);
+
+          color: #f8f8f2;
+          background-color: #313131;
+          border-radius: 5px;
+        }
       }
     }
   }
 
   .post-info-more {
-    padding: 0.3rem 0 1rem;
+    padding: 15px 0;
+    a {
+      padding: 5px;
+      color: #f8f8f2;
+      text-decoration: none;
+    }
+    a:hover {
+      padding: 5px;
+      color: #f8f8f2;
+      background-color: #313131;
+      border-radius: 5px;
+      @include transition(all 0.3s ease-in-out);
+
+    }
+    // padding: 0.3rem 0 1rem;
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
   }
 
   .post-tags {
+    a {
+      padding: 5px;
 
+      color: #f8f8f2;
+      text-decoration: none;
+    }
+    a:hover {
+      padding: 5px;
+      @include transition(all 0.3s ease-in-out);
 
+      color: #f8f8f2;
+      background-color: #313131;
+      border-radius: 5px;
+    }
     max-width: 65%;
 
     * {
@@ -59,15 +107,19 @@
   }
 
   .post-nav {
+    a {
+      text-decoration: none;
+      padding: 5px;
+    }
     &::before,
     &::after {
-      content: ' ';
+      content: " ";
       display: table;
     }
 
     & a.prev,
     & a.next {
-      color: #F8F8F2;
+      color: #f8f8f2;
       font-size: 1rem;
       font-weight: 600;
       @include transition(all 0.3s ease-out);
@@ -75,11 +127,17 @@
 
     & a.prev {
       float: left;
-      color: #F8F8F2;
+      color: #f8f8f2;
     }
 
     & a.prev:hover {
-      @include transform(translateX(-4px));
+      @include transition(all 0.3s ease-in-out);
+
+      color: #f8f8f2;
+      background-color: #313131;
+      border-radius: 5px;
+      padding: 5px;
+
     }
 
     & a.next {
@@ -87,7 +145,12 @@
     }
 
     & a.next:hover {
-      @include transform(translateX(4px));
+      padding: 5px;
+      @include transition(all 0.3s ease-in-out);
+
+      color: #f8f8f2;
+      background-color: #313131;
+      border-radius: 5px;
     }
   }
 }

@@ -1,11 +1,13 @@
 .toc {
   a {
-    padding: 3px;
+    padding: 5px;
     color: #F8F8F2;
   }
   a:hover {
+    padding: 5px;
+    @include transition(all 0.3s ease-in-out);
     color: #F8F8F2;
-    background-color: #21222c;
+    background-color: #313131;
     border-radius: 5px;
   }
   .toc-title {
@@ -28,7 +30,7 @@
         margin-right: .5rem;
       }
       li {
-        padding: 2px;
+        padding: 3px 0;
       }
       ul {
         padding-left: 1.5rem;
@@ -93,7 +95,7 @@
 
     ul {
       a {
-        color: #a7abbe; 
+        color: #a2a1a1; 
       }
       a:hover{
           color: #F8F8F2; 
@@ -109,7 +111,7 @@
 
       .active > a {
           a {
-            color: #a7abbe;
+            color: #a2a1a1;
         }       
       }
 

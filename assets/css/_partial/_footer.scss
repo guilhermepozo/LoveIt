@@ -4,7 +4,44 @@ footer {
   text-align: center;
   line-height: 1.25rem;
   padding: 1rem 0;
+  color: #7F7D7D; 
 
+  a {
+    @include transition(all 0.3s ease-in-out);
+    background-image: linear-gradient(
+      to right,
+      #9580ff 0%,
+      #80ffea 13%,
+      #8aff80 25%,
+      #ffff80 40%,
+      #ffca80 65%,
+      #ff9580 85%,
+      #ff80bf 100%
+    );
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+  a:hover {
+    @include transition(all 0.3s ease-in-out);
+    background-image: linear-gradient(
+      to left,
+      #9580ff 0%,
+      #80ffea 13%,
+      #8aff80 25%,
+      #ffff80 40%,
+      #ffca80 65%,
+      #ff9580 85%,
+      #ff80bf 100%
+    );
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
   .footer-container {
     font-size: .875rem;
 

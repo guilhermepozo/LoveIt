@@ -20,6 +20,20 @@
 
   &:hover, &:active {
     cursor: pointer;
+    color: #2d2d2d;
+    @include transition(all 0.3s ease-in-out);
+    background-image: linear-gradient(
+      to left,
+      #9580ff 0%,
+      #80ffea 13%,
+      #8aff80 25%,
+      #ffff80 40%,
+      #ffca80 65%,
+      #ff9580 85%,
+      #ff80bf 100%
+    );
+    background-size: 100%;
+
   }
 
   &:active, &:focus, &:hover {

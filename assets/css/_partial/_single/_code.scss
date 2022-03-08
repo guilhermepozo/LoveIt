@@ -7,7 +7,6 @@ code {
   font-size: $code-font-size;
   font-family: $code-font-family;
   color: $code-color;
-
   [theme=dark] & {
     color: $code-color-dark;
   }
@@ -20,6 +19,7 @@ pre {
 
   code {
     padding: 0;
+
   }
 
   img {
@@ -30,11 +30,14 @@ pre {
 }
 
 code, pre, .highlight table, .highlight tr, .highlight td {
-  background: $code-background-color;
-
-  [theme=dark] & {
-    background: $code-background-color-dark;
+  a:hover{
+    background: none;
   }
+  // background: $code-background-color;
+
+  // [theme=dark] & {
+  //   background: $code-background-color-dark;
+  // }
 }
 
 .highlight, .gist {
