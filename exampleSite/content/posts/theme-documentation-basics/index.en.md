@@ -217,7 +217,7 @@ Please open the code block below to view the complete sample configuration :(far
     # optional site title override for the app when added to an iOS home screen or Android launcher
     title = "LoveIt"
     # whether to omit favicon resource links
-    noFavicon = false
+    noFavicon = true
     # modern SVG favicon to use in place of older style .png and .ico files
     svgFavicon = ""
     # Android browser theme color

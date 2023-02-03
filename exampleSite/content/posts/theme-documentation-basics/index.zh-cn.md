@@ -220,7 +220,7 @@ hugo
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
     title = "LoveIt"
     # 是否隐藏网站图标资源链接
-    noFavicon = false
+    noFavicon = true
     # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
     svgFavicon = ""
     # Android 浏览器主题色
