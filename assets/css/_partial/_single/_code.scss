@@ -1,6 +1,7 @@
 code {
   display:inline-block;
   max-width: 100%;
+  background-color: transparent;
   padding: 0 .4rem;
   @include overflow-wrap(break-word);
   @include line-break(anywhere);

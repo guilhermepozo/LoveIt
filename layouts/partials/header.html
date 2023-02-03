@@ -8,11 +8,11 @@
                         {{- dict "Src" . "Class" "logo" | partial "plugin/image.html" -}}
                     {{- end -}}
                     {{- with .pre -}}
-                        <span class="header-title-pre drac-text-pink-purple">{{ . | safeHTML }}</span>
+                        <span class="header-title-pre drac-text-green">{{ . | safeHTML }}</span>
                     {{- end -}}
                     {{- .name -}}
                     {{- with .post -}}
-                        <span class="header-title-post drac-text-pink-purple">{{ . | safeHTML }}</span>
+                        <span class="header-title-post drac-text-green">{{ . | safeHTML }}</span>
                     {{- end -}}
                 {{- else -}}
                     {{- .Site.Title -}}
