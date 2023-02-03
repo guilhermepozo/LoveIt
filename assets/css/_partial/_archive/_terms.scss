@@ -52,6 +52,8 @@
 }
 
 .archive-item:hover {
+  @include transition(all 0.3s ease-in-out);
+
   cursor: pointer;
     color: #F8F8F2;
     background-color: #313131;

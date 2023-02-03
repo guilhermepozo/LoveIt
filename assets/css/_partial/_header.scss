@@ -22,7 +22,6 @@ header {
   }
 
   .header-title-post {
-    padding-left: .25rem;
   }
 
   &:hover {
@@ -39,7 +38,7 @@ header {
 }
 
 .header-title {
-  font-family: $header-title-font-family;
+  font-family: 'Alata', sans-serif;
   font-weight: 400;
   margin-right: .5rem;
   min-width: 10%;
