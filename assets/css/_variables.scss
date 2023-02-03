@@ -7,7 +7,7 @@
 $global-font-family: system-ui, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei UI, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif !default;
 $global-font-size: 16px;
 $global-font-weight: 400;
-$global-line-height: 1.5rem;
+$global-line-height: 150%;
 
 // Color of the background
 $global-background-color: #050505 !default;
@@ -115,7 +115,7 @@ $code-background-color: #f5f5f5 !default;
 $code-background-color-dark: #282a36 !default;
 
 $code-info-color: #9c9c9c !default;
-$code-info-color-dark: #44475a !default;
+$code-info-color-dark: #b5badb !default;
 
 // Font size of the code
 $code-font-size: .875rem !default;
@@ -232,13 +232,13 @@ $code-highlight-color-map: (
   /* LiteralNumberOct */ 'mo': #ffb86c,
   /* Operator */ 'o': #ffb86c,
   /* OperatorWord */ 'ow': #a73676,
-  /* Comment */ 'c': #6272a4,
-  /* CommentHashbang */ 'ch': #6272a4,
-  /* CommentMultiline */ 'cm': #6272a4,
-  /* CommentSingle */ 'c1': #6272a4,
-  /* CommentSpecial */ 'cs': #6272a4,
-  /* CommentPreproc */ 'cp': #6272a4,
-  /* CommentPreprocFile */ 'cpf': #6272a4,
+  /* Comment */ 'c': #879ddd,
+  /* CommentHashbang */ 'ch': #879ddd,
+  /* CommentMultiline */ 'cm': #879ddd,
+  /* CommentSingle */ 'c1': #879ddd,
+  /* CommentSpecial */ 'cs': #879ddd,
+  /* CommentPreproc */ 'cp': #879ddd,
+  /* CommentPreprocFile */ 'cpf': #879ddd,
   /* Generic */ 'g': #ff5555,
   /* GenericDeleted */ 'gd': #ff5555,
   /* GenericEmph */ 'ge': #ff5555,
@@ -307,13 +307,13 @@ $code-highlight-color-map-dark: (
   /* LiteralNumberOct */ 'mo': #ffb86c,
   /* Operator */ 'o': #ffb86c,
   /* OperatorWord */ 'ow': #a73676,
-  /* Comment */ 'c': #6272a4,
-  /* CommentHashbang */ 'ch': #6272a4,
-  /* CommentMultiline */ 'cm': #6272a4,
-  /* CommentSingle */ 'c1': #6272a4,
-  /* CommentSpecial */ 'cs': #6272a4,
-  /* CommentPreproc */ 'cp': #6272a4,
-  /* CommentPreprocFile */ 'cpf': #6272a4,
+  /* Comment */ 'c': #879ddd,
+  /* CommentHashbang */ 'ch': #879ddd,
+  /* CommentMultiline */ 'cm': #879ddd,
+  /* CommentSingle */ 'c1': #879ddd,
+  /* CommentSpecial */ 'cs': #879ddd,
+  /* CommentPreproc */ 'cp': #879ddd,
+  /* CommentPreprocFile */ 'cpf': #879ddd,
   /* Generic */ 'g': #ff5555,
   /* GenericDeleted */ 'gd': #ff5555,
   /* GenericEmph */ 'ge': #ff5555,

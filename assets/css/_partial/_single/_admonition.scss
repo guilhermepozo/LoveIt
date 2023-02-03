@@ -1,6 +1,11 @@
 .admonition {
   a { 
-    text-decoration: underline;
+    color: #92ffff;
+  }
+  a:hover {
+    color: #92ffff80;
+    @include transition(all 0.3s ease-in-out);
+
   }
   position: relative;
   margin: 1rem 0;

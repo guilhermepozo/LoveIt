@@ -6,7 +6,7 @@
     <div class="page archive">
         {{- /* Title */ -}}
         <h2 class="single-title">
-            <span class="drac-text-purple-cyan">{{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" -}}</span>
+            <span class="drac-text-green">{{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "allSome" -}}</span>
         </h2>
 
         {{- /* Paginate */ -}}
@@ -18,7 +18,7 @@
                 {{- $pages = .Paginate $pages -}}
             {{- end -}}
             {{- range $pages.PageGroups -}}
-                <h3 class="group-title"><span class="drac-text-yellow-pink">{{ .Key }}</span></h3>
+                <h3 class="group-title"><span class="drac-text-green">{{ .Key }}</span></h3>
                 {{- range .Pages -}}
                     <article class="archive-item" onClick="location.href='{{ .RelPermalink }}'" >
                         <a href="{{ .RelPermalink }}" class="archive-item-link">

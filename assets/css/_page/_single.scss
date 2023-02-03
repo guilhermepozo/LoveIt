@@ -3,9 +3,6 @@
 .single {
   
   a {
-    text-decoration: underline;
-    color: #f8f8f2;
-    padding: 0px 3px;
   }
 
   .single-title {
@@ -39,6 +36,8 @@
     }
     span {
       display: inline-block;
+      color: #c1c1c1;
+
     }
 
     @include link(false, false);
@@ -66,8 +65,11 @@
   }
 
   .content {
-    color: #a2a1a1;
-
+    color: #c1c1c1;
+    a:hover {
+      @include transition(all 0.3s ease-in-out);
+      color: #92ffff80;
+    }
     font-weight: 300;
 
     > h2 {
@@ -135,23 +137,7 @@
       }
     }
     .header-mark:hover{
-        @include transition(all 0.3s ease-in-out);
-        background-image: linear-gradient(
-          to top,
-          #9580ff 0%,
-          #80ffea 13%,
-          #8aff80 25%,
-          #ffff80 40%,
-          #ffca80 65%,
-          #ff9580 85%,
-          #ff80bf 100%
-        );
-        background-size: 100%;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
-      
+      color: #92ffff80;
     }
     > h2 > .header-mark::before {
       margin-left: -5px;
@@ -160,27 +146,12 @@
 
     p {
       a:hover {
+        color: #92ffff80;
         @include transition(all 0.3s ease-in-out);
-        background-color: #80ffea;
-        background-image: linear-gradient(
-          to right,
-          #9580ff 0%,
-          #80ffea 13%,
-          #8aff80 25%,
-          #ffff80 40%,
-          #ffca80 65%,
-          #ff9580 85%,
-          #ff80bf 100%
-        );
-        background-size: 100%;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
       }
       margin: 0.5rem 0;
       a {
-        text-decoration: underline;
+        color: #92ffff;
       }
     }
 
@@ -203,13 +174,13 @@
     }
     a:active,
     a:hover {
-      color: #f8f8f2;
+      color: #92ffff80;
     }
 
     ul,
     ol {
       a {
-        text-decoration: underline;
+        color: #92ffff;
       }
       margin: 0.5rem 0;
       padding-left: 2.5rem;
@@ -323,11 +294,9 @@
     }
 
     .footnotes {
-      color: $global-font-secondary-color;
+      color: #c1c1c1;
 
-      [theme="dark"] & {
-        color: $global-font-secondary-color-dark;
-      }
+
 
       p {
         margin: 0.25rem 0;
@@ -377,22 +346,7 @@
     .typeit {
       .code {
         a:hover {
-          @include transition(all 0.3s ease-in-out);
-          background-image: linear-gradient(
-            to right,
-            #9580ff 0%,
-            #80ffea 13%,
-            #8aff80 25%,
-            #ffff80 40%,
-            #ffca80 65%,
-            #ff9580 85%,
-            #ff80bf 100%
-          );
-          background-size: 100%;
-          -webkit-background-clip: text;
-          -moz-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          -moz-text-fill-color: transparent;
+          color: #92ffff80;
         }
         padding: 0.375rem;
         font-size: 0.875rem;

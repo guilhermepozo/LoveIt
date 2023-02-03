@@ -61,9 +61,7 @@
   width: $MAX_LENGTH;
   max-width: 0;
   padding: 0 .8rem;
-  border-left: 1px solid transparent;
-  border-image: linear-gradient(to bottom, #9580FF 0%, #80ffea 13%, #8aff80 25%, #FFFF80 40%, #ffca80 65%, #FF9580 85%, #ff80bf 100%);
-  border-image-slice: 1;  @include overflow-wrap(break-word);
+  border: 1px solid transparent;
   box-sizing: border-box;
   top: 10rem;
   left: 0;
@@ -76,7 +74,7 @@
   @include blur;
 
   [theme=dark] & {
-    border-left-color: $global-border-color-dark;
+    border-left-color: #a2a1a1;
   }    
   
   .toc-title {
