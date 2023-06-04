@@ -7,7 +7,7 @@ footer {
   color: #7F7D7D; 
 
   a {
-    color: #92ffff;
+    color: var(--green);
   }
   a:hover {
     @include transition(all 0.3s ease-in-out);
