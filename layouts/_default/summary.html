@@ -7,7 +7,7 @@
                 <a class="drac-text-white" href="{{ .RelPermalink }}">{{ .Title }}</a>
             </h1>
         </div>
-        <div class="drac-w-xs drac-text-right">
+        <div class="drac-text-right">
             {{- with .PublishDate -}}
             {{ $month_names := slice "Jan" "Fev" "Mar" "Abr" "Mai" "Jun" "Jul" "Ago" "Set" "Out" "Nov" "Dez" }}
             {{ $month := sub .Month 1 }}

@@ -67,7 +67,6 @@
 }
 
 .title-box {
-  padding: 0 15px;
   cursor: pointer;
   a{
     text-decoration: none;
@@ -77,18 +76,6 @@
     background-color: #313131;
     border-radius: 5px;
   }
-  // background: /* gradient can be an image */
-  // linear-gradient(
-  //   to left,
-  //   #8aff80 0%,
-  //   #80ffea 63%,
-  //   #21222c 90%,
-  //   #21222c 100%
-  // )
-  // left 
-  // bottom
-  // no-repeat; 
-
   background-size:100% 1px;/* if linear-gradient, we need to resize it */
   display: flex;
   align-items: center;
